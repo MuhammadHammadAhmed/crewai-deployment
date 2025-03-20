@@ -14,6 +14,8 @@ class PoemState(BaseModel):
 
 
 class PoemFlow(Flow[PoemState]):
+    
+    model="gemini/gemini-2.0-flash-exp"
 
     @start()
     def generate_sentence_count(self):
