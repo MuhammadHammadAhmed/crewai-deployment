@@ -10,6 +10,7 @@ dependencies = [
 
 [project.scripts]
 kickoff = "deployment.main:kickoff"
+run_crew = "poem.main:kickoff"
 plot = "deployment.main:plot"
 
 [build-system]
