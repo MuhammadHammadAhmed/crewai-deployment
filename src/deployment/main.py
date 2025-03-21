@@ -14,7 +14,7 @@ class PoemState(BaseModel):
 
 
 class PoemFlow(Flow[PoemState]):
-    
+
     model="gemini/gemini-2.0-flash-exp"
 
     @start()
@@ -36,14 +36,13 @@ class PoemFlow(Flow[PoemState]):
 
     @listen(generate_poem)
     def save_poem(self):
+        print(self.state.poem)
         return {
-        "poem": self.state.poem,
-        "sentence_count": self.state.sentence_count,
-        "authour": "Muhammad Qasim"
-    }
-        # print("Saving poem")
-        # with open("poem.txt", "w") as f:
-        #     f.write(self.state.poem)
+            "poem": self.state.poem,
+            "sentence_count": self.state.sentence_count,
+            "authour": "Muhammad Qasim"
+        }
+    
 
 
 def kickoff():
